@@ -46,6 +46,8 @@ namespace Afribacom.Controllers
             return View(articles);
         }
 
+        [Authorize]
+
         // GET: Articles/Create
         public IActionResult Create()
         {
@@ -84,6 +86,8 @@ namespace Afribacom.Controllers
             return View(articles);
         }
 
+        [Authorize]
+
         // POST: Articles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -119,6 +123,8 @@ namespace Afribacom.Controllers
             return View(articles);
         }
 
+        [Authorize]
+
         // GET: Articles/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -136,6 +142,8 @@ namespace Afribacom.Controllers
 
             return View(articles);
         }
+
+        [Authorize]
 
         // POST: Articles/Delete/5
         [HttpPost, ActionName("Delete")]

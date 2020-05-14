@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Afribacom.Data;
 using Afribacom.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Afribacom.Controllers
 {
@@ -19,6 +20,7 @@ namespace Afribacom.Controllers
             _context = context;
         }
 
+        [Authorize]
 
         // GET: Categories
         public async Task<IActionResult> Index()
@@ -44,11 +46,15 @@ namespace Afribacom.Controllers
             return View(category);
         }
 
+        [Authorize]
+
         // GET: Categories/Create
         public IActionResult Create()
         {
             return View();
         }
+
+        [Authorize]
 
         // POST: Categories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -66,6 +72,8 @@ namespace Afribacom.Controllers
             return View(category);
         }
 
+        [Authorize]
+
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -81,6 +89,8 @@ namespace Afribacom.Controllers
             }
             return View(category);
         }
+
+        [Authorize]
 
         // POST: Categories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -117,6 +127,8 @@ namespace Afribacom.Controllers
             return View(category);
         }
 
+        [Authorize]
+
         // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -134,6 +146,8 @@ namespace Afribacom.Controllers
 
             return View(category);
         }
+
+        [Authorize]
 
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
